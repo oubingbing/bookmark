@@ -16,12 +16,19 @@
   					<div class="search-input"><input v-model="searchWorld" placeholder="搜你想搜的"></div>
   					<div class="search-button" v-on:click="openSearchPage"><span>百度一下</span></div>
   				</div>
-  				<div class="commonly-bookmark">
-  					<div v-for="normalBookmark in normalBookmarkList" class="normal-bookmark-item" style="cursor:pointer;">
-  						<img v-bind:src="normalBookmark.icon"/><span>{{normalBookmark.title}}</span>
-  					</div>
+  				<div class="commonly-content">
+  					<div class="commonly-content-right"></div>
+  					<div class="commonly-bookmark">
+	  					<div v-for="normalBookmark in normalBookmarkList" class="normal-bookmark-item">
+	  						<img v-bind:src="normalBookmark.icon"/><span>{{normalBookmark.title}}</span>
+	  					</div>
+	  				</div>
+	  				<div class="header-tip commonly-content-left">
+	  					<div class="tip-div"><small>您的常用书签，根据你的使用频率来推荐给您</small></div>
+	  				</div>
   				</div>
   			</div>
+
   			<div class="m-body">
   				<!-- 网友分享的书签 -->
   				<div class="body-left">
@@ -35,8 +42,34 @@
   					
   					right
 
+  					<!-- 新建悬浮框 -->
+  					<div class="create-container" v-on:click="ShowHiddenCreateForm">
+	  					<img src="/frontend/assets/images/create-button.png" v-if="!showCreateForm">
+	  					<img src="/frontend/assets/images/close-button.png" v-else>
+	  				</div>
+
+	  				<!-- 新建书签表单 -->
+	  				<div class="create-form-container" v-if="showCreateForm">
+	  					<div class="create-form-item">
+	  						<span>书签名</span>
+	  						<input type="text" class="form-control" name="" placeholder="必填">
+	  					</div>
+	  					<div class="create-form-item">
+	  						<span>书签地址</span>
+	  						<textarea class="form-control" placeholder="必填" rows="2" cols="20"></textarea>
+	  					</div>
+	  					<div class="create-form-item">
+	  						<span>书签备注</span>
+	  						<textarea class="form-control" rows="2" cols="20" placeholder="选填"></textarea>
+	  					</div>
+	  					<div class="save-bookmark">
+	  						<span>保存</span>
+	  					</div>
+	  				</div>
   				</div>
+
   			</div>
+
   		</div>
 	</div>
 

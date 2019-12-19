@@ -27,7 +27,8 @@
 	  	data: {
 	  		title:"星虫",
 	  		searchWorld:"",//搜索词,
-	  		normalBookmarkList:normalBookmark//常用书签
+	  		normalBookmarkList:normalBookmark,//常用书签
+	  		showCreateForm:false,//是否显示书签表单
 	  	},
 
 	  	mounted: function () {
@@ -41,6 +42,16 @@
         		var url = "https://www.baidu.com/s?&word="+this.searchWorld
         		this.searchWorld = ''
         		window.open(url,"_blank");
+        	},
+
+        	//显示或隐藏新建书签报表
+        	ShowHiddenCreateForm:function(){
+        		console.log("是否显示")
+        		if (this.showCreateForm) {
+        			this.showCreateForm = false
+        		}else{
+        			this.showCreateForm = true
+        		}
         	}
 
         }

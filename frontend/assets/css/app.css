@@ -83,6 +83,19 @@ body{
 }
 
 /** 头部常用书签 **/
+
+.commonly-content-right{
+	width: 15%;
+	/** 预留 **/
+}
+
+.commonly-content{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content:flex-end;
+}
+
 .m-header .commonly-bookmark{
 	width: 70%;
 	margin: 0px auto;
@@ -98,10 +111,98 @@ body{
 	flex-direction: row;
 	align-items: center;
 	cursor:pointer;
+	margin-bottom: 10px;
 }
 
 .normal-bookmark-item img{
 	width: 15px;
 	height: 15px;
 	margin-right: 5px;
+}
+
+/** 头部功能说明提示 **/
+.header-tip{
+	width: 15%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.tip-div{
+	width: 65%;
+	color: gray;
+}
+
+
+/** 新建数据按钮 **/
+.create-container{
+	height: 100px;
+	z-index: 100;
+	position: relative;
+	display: flex;
+	float: right;
+	right: -90px;
+	top: 30%;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	background: #ffffff;
+	padding: 0px 10px;
+	border-radius: 5px;
+}
+
+.create-container img{
+	width: 35px;
+	height: 35px;
+}
+
+/** 新建书签表单 **/
+.create-form-container{
+	height: 310px;
+	width: 30%;
+	z-index: 100;
+	position: relative;
+	display: flex;
+	float: right;
+	right: -20px;
+	top: 10%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	background: #F2F2F2;
+	padding: 25px 15px;
+	border-radius: 5px;
+	-moz-box-shadow: 10px 10px 8px gainsboro;
+	box-shadow: 6px 6px 8px gainsboro;
+}
+
+.create-form-item{
+	width: 100%;
+}
+
+.create-form-item input{
+	width: 100%;
+	margin-bottom: 15px;
+	height: 30px;
+	padding: 3px 5px;
+}
+
+.create-form-item textarea{
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.save-bookmark{
+	width: 30%;
+	background: #66CDAA;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 5px;
+	color: #ffffff;
+	padding: 5px;
+	border-radius: 5px;
+	cursor:default ;
 }
