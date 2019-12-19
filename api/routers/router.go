@@ -3,7 +3,7 @@ package routers
 import (
 	"github.com/gin-gonic/gin"
 	"newbug/controller"
-	"newbug/controller/middleware"
+	"newbug/middleware"
 )
 
 func InitRouter() *gin.Engine {

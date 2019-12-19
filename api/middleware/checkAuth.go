@@ -12,6 +12,8 @@ func CheckUserAuth() gin.HandlerFunc {
 
 		c.Next()
 
+		c.GetHeader("Authorization")
+
 		// after request
 		fmt.Printf("请求后")
 	}

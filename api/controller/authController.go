@@ -1,8 +1,11 @@
 package controller
 
 import (
+	"bytes"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"io"
+	"net/http"
 	"newbug/util"
 )
 
@@ -24,4 +27,17 @@ func Register(ctx *gin.Context)  {
 	}
 
 	ctx.JSON(200,jwt.Email)
+}
+
+func Test()  {
+	req, err := http.NewRequest("GET", fmt.Sprintf("http://localhost:%v/restricted", 8080), nil)
+	req.Header.Set("Authorization", fmt.Sprintf("Bearer %v", token))
+	res, err := http.DefaultClient.Do(req)
+	fatal(err)
+
+	// Read the response body
+	buf := new(bytes.Buffer)
+	io.Copy(buf, res.Body)
+	res.Body.Close()
+	fmt.Println(buf.String())
 }
