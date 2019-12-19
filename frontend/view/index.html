@@ -13,7 +13,7 @@
   			<!-- 用户日常使用书签 -->
   			<div class="m-header">
   				<div class="search-container">
-  					<div class="search-input"><input v-model="searchWorld" placeholder="搜你想搜的"></div>
+  					<div class="search-input"><input v-model="searchWorld" placeholder="搜你想搜的" v-on:keyup.enter="openSearchPage"></div>
   					<div class="search-button" v-on:click="openSearchPage"><span>百度一下</span></div>
   				</div>
   				<div class="commonly-content">
