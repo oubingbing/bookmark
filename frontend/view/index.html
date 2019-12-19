@@ -17,14 +17,17 @@
   					<div class="search-button" v-on:click="openSearchPage"><span>百度一下</span></div>
   				</div>
   				<div class="commonly-content">
-  					<div class="commonly-content-right"></div>
+  					<div class="commonly-content-right">
+  						<div class="site-name"><h3>新虫书签</h3></div>
+  						<div class="site-domain"><h5>newbug.vip</h5></div>
+  					</div>
   					<div class="commonly-bookmark">
 	  					<div v-for="normalBookmark in normalBookmarkList" class="normal-bookmark-item">
 	  						<img v-bind:src="normalBookmark.icon"/><span>{{normalBookmark.title}}</span>
 	  					</div>
 	  				</div>
 	  				<div class="header-tip commonly-content-left">
-	  					<div class="tip-div"><small>您的常用书签，根据你的使用频率来推荐给您</small></div>
+	  					<div class="tip-div"><small>新虫书签，你的书签网址管理主页，您可以添加自己的书签，方便日常生活工作</small></div>
 	  				</div>
   				</div>
   			</div>

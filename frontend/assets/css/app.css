@@ -32,7 +32,7 @@ body{
 	width: 30%;
 	background: #ffffff;
 	float: left;
-	height: 500px;
+	height: 700px;
 	-moz-box-shadow: 10px 10px 5px gainsboro; 
 	box-shadow: 6px 6px 5px gainsboro;
 	border-radius: 10px;
@@ -43,7 +43,7 @@ body{
 	width: 69%;
 	background: #ffffff;
 	float: right;
-	height: 500px;
+	height: 700px;
 	-moz-box-shadow: 10px 10px 5px gainsboro;
 	box-shadow: 6px 6px 5px gainsboro;
 	border-radius: 10px;
@@ -83,10 +83,22 @@ body{
 }
 
 /** 头部常用书签 **/
-
 .commonly-content-right{
 	width: 15%;
-	/** 预留 **/
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.site-name{
+	margin-top: -20px;
+	color: #66CDAA;
+}
+
+.site-domain{
+	color: #66CDAA;
+	margin-top: -15px;
 }
 
 .commonly-content{
@@ -131,7 +143,7 @@ body{
 }
 
 .tip-div{
-	width: 65%;
+	width: 80%;
 	color: gray;
 }
 
@@ -144,7 +156,7 @@ body{
 	display: flex;
 	float: right;
 	right: -90px;
-	top: 30%;
+	top: 200px;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
