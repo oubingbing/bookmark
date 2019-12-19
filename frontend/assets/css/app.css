@@ -1,0 +1,107 @@
+
+ [v-cloak]{
+    display: none
+ }
+
+body{
+	margin: 0px;
+	padding: 0px;
+	background: #F2F2F2;
+}
+
+.main-content{
+	width: 100%;
+}
+
+.m-header{
+	height: 200px;
+	background: #ffffff;
+	margin-top: 10px;
+	-moz-box-shadow: 10px 10px gainsboro;
+	box-shadow: 6px 6px 5px gainsboro;
+	border-radius: 10px;
+	padding: 5px 10px;
+}
+
+.m-body{
+	width: 100%;
+	margin-top: 10px;
+}
+
+.body-left{
+	width: 30%;
+	background: #ffffff;
+	float: left;
+	height: 500px;
+	-moz-box-shadow: 10px 10px 5px gainsboro; 
+	box-shadow: 6px 6px 5px gainsboro;
+	border-radius: 10px;
+	padding: 5px 10px;
+}
+
+.body-right{
+	width: 69%;
+	background: #ffffff;
+	float: right;
+	height: 500px;
+	-moz-box-shadow: 10px 10px 5px gainsboro;
+	box-shadow: 6px 6px 5px gainsboro;
+	border-radius: 10px;
+	padding: 5px 10px;
+}
+
+/** 头部搜索框 **/
+.m-header .search-container{
+	width: 70%;
+	height: 30%;
+	margin: 0px auto;	
+	margin-top: 10px;
+}
+
+.search-input{
+	width: 80%;
+	float: left;;
+}
+
+.search-input input{
+	width: 100%;
+	height: 40px;
+	padding: 5px 10px;
+}
+
+.search-button{
+	width: 20%;
+	float: left;
+	background: #3083FF;
+	color: #ffffff;
+	height: 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	cursor:pointer;
+}
+
+/** 头部常用书签 **/
+.m-header .commonly-bookmark{
+	width: 70%;
+	margin: 0px auto;
+	height: 60%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.normal-bookmark-item{
+	width: 20%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	cursor:pointer;
+}
+
+.normal-bookmark-item img{
+	width: 15px;
+	height: 15px;
+	margin-right: 5px;
+}

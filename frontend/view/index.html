@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>new bug</title>
+</head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/frontend/assets/css/app.css">
+<body>
+	<!-- 内容 -->
+	<div class="container" id="app">
+  		<div class="main-content" v-cloak>
+  			<!-- 用户日常使用书签 -->
+  			<div class="m-header">
+  				<div class="search-container">
+  					<div class="search-input"><input v-model="searchWorld" placeholder="搜你想搜的"></div>
+  					<div class="search-button" v-on:click="openSearchPage"><span>百度一下</span></div>
+  				</div>
+  				<div class="commonly-bookmark">
+  					<div v-for="normalBookmark in normalBookmarkList" class="normal-bookmark-item" style="cursor:pointer;">
+  						<img v-bind:src="normalBookmark.icon"/><span>{{normalBookmark.title}}</span>
+  					</div>
+  				</div>
+  			</div>
+  			<div class="m-body">
+  				<!-- 网友分享的书签 -->
+  				<div class="body-left">
+  					
+  					left {{title}}
+
+  				</div>
+
+  				<!-- 用户自建的书签内容 -->
+  				<div class="body-right">
+  					
+  					right
+
+  				</div>
+  			</div>
+  		</div>
+	</div>
+
+	<script src="https://cdn.bootcss.com/vue/2.6.8/vue.min.js"></script>
+	<script src="/frontend/assets/js/app.js"></script>
+</body>
+</html>
