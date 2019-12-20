@@ -65,7 +65,6 @@ func Login(ctx *gin.Context)  {
 	}
 
 	validResult := service.Valid(user)
-	fmt.Println(validResult)
 	for _,v := range validResult {
 		util.ResponseJson(ctx,http.StatusInternalServerError,v.ErrorMessage,nil)
 		return
