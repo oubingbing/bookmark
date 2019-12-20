@@ -18,8 +18,8 @@ func InitRouter() *gin.Engine {
 
 	auth := router.Group("/auth")
 	{
-		auth.GET("/register",controller.Register)
-		auth.GET("/login",controller.Login)
+		auth.POST("/register",controller.Register)
+		auth.POST("/login",controller.Login)
 	}
 
 	return router
