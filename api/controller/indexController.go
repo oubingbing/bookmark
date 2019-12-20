@@ -1,7 +1,13 @@
 package controller
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+	"net/http"
+	"newbug/util"
+)
 
 func User(ctx *gin.Context)  {
-	ctx.JSON(200,"user")
+	email := ctx.GetString("email")
+	util.ResponseJson(ctx,http.StatusOK,"操作成功",email)
+	return
 }

@@ -7,10 +7,10 @@ import (
 )
 
 //签名密钥
-var secretKey  []byte = []byte("")
+var secretKey  []byte = []byte("xknMuxhMhv1dqvxnDKn3AHzw5HeV8G7E/HZrESxiY7M=")
 
 type Jwt struct {
-	Email string
+	Email interface{}
 	secretKey []byte
 	Token string
 }
@@ -20,9 +20,9 @@ type Jwt struct {
  */
 func (this *Jwt) ParseToken() (error) {
 	this.secretKey = secretKey
-
 	tokenPoint,err := jwt.Parse(this.Token, func(token *jwt.Token) (i interface{}, e error) {
 		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
+			Error(fmt.Sprintf("Unexpected signing method: %v", token.Header["alg"]))
 			return nil, fmt.Errorf("Unexpected signing method: %v", token.Header["alg"])
 		}
 
@@ -33,8 +33,8 @@ func (this *Jwt) ParseToken() (error) {
 		return err
 	}
 
-	if _, ok := tokenPoint.Claims.(jwt.MapClaims); ok && tokenPoint.Valid {
-		this.Token = jwt.Token{}.Signature
+	if c, ok := tokenPoint.Claims.(jwt.MapClaims); ok && tokenPoint.Valid {
+		this.Email = c["email"]
 		return nil
 	} else {
 		return  err
@@ -49,7 +49,7 @@ func (this *Jwt) CreateToken() (error) {
 
 	//可以在里面自定义自己需要传输的信息，不要存放机密信息，如密码之类的信息
 	type MyCustomClaims struct {
-		Email string `json:"email"`//邮箱，用邮箱标记用户信息
+		Email interface{} `json:"email"`//邮箱，用邮箱标记用户信息
 		jwt.StandardClaims
 	}
 
@@ -69,3 +69,4 @@ func (this *Jwt) CreateToken() (error) {
 		return nil
 	}
 }
+
