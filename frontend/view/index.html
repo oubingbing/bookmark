@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>new bug</title>
+	<title>新虫书签</title>
 </head>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="/frontend/assets/css/app.css">
@@ -13,8 +13,49 @@
   			<!-- 用户日常使用书签 -->
   			<div class="m-header">
   				<div class="search-container">
-  					<div class="search-input"><input v-model="searchWorld" placeholder="搜你想搜的" v-on:keyup.enter="openSearchPage"></div>
-  					<div class="search-button" v-on:click="openSearchPage"><span>百度一下</span></div>
+					<div class="search-left"></div>
+					<div class="search-middle">
+						<div class="search-input"><input v-model="searchWorld" placeholder="搜你想搜的" v-on:keyup.enter="openSearchPage"></div>
+						<div class="search-button" v-on:click="openSearchPage"><span>百度一下</span></div>
+					</div>
+					<!-- 注册登录/用户信息 -->
+					<div class="search-right">
+						<div class="search-right-auth" v-if="showAuth">
+							<div class="auth-item" v-on:click="login">登录</div>
+							<div class="auth-item" v-on:click="showRegister">注册</div>
+						</div>
+						<div class="search-right-user" v-else>
+							<div>yezi</div>
+						</div>
+					</div>
+					<div class="register-container" v-if="showRegisterDiv">
+						<div class="create-form-item">
+							<span>昵称</span>
+							<input type="text" class="form-control" name="" placeholder="16个字符以内" v-model="registerForm.nickname">
+						</div>
+						<div class="create-form-item">
+							<span>邮箱</span>
+							<input type="email" class="form-control" name="" placeholder="必填" v-model="registerForm.email">
+						</div>
+						<div class="create-form-item">
+							<span>密码</span>
+							<input type="password" class="form-control" name="" placeholder="6~16个字符" v-model="registerForm.password">
+						</div>
+						<div class="create-form-item">
+							<span>确认密码</span>
+							<input type="password" class="form-control" name="" placeholder="必填" v-model="registerForm.confirm_password">
+						</div>
+						<div class="register-operate-button">
+							<div class="save-bookmark" v-on:click="register">
+								<span>保存</span>
+							</div>
+							<div class="save-bookmark"
+								 style="background: gainsboro;color: darkgray;"
+								 v-on:click="showRegister">
+								<span>关闭</span>
+							</div>
+						</div>
+					</div>
   				</div>
   				<div class="commonly-content">
   					<div class="commonly-content-right">
@@ -77,6 +118,8 @@
 	</div>
 
 	<script src="https://cdn.bootcss.com/vue/2.6.8/vue.min.js"></script>
+	<script src="https://cdn.bootcss.com/axios/0.17.1/axios.min.js"></script>
+	<script src="https://cdn.bootcss.com/qs/6.5.2/qs.min.js"></script>
 	<script src="/frontend/assets/js/app.js"></script>
 </body>
 </html>

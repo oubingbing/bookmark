@@ -44,6 +44,7 @@ func GetAppConfig() map[string]string {
 	configMp := make(map[string]string)
 	for {
 		line, err := reader.ReadString('\n') //以'\n'为结束符读入一行
+		fmt.Printf("line:%v\n",line)
 		if err != nil || io.EOF == err {
 			break
 		}

@@ -9,6 +9,7 @@ import (
 
 func Connect() *gorm.DB {
 	configString ,err := util.GetMysqlConfig()
+	fmt.Println(configString)
 	if err != nil{
 		util.Info(fmt.Sprintf("获取数据失败：%v\n",err.Error()))
 	}
